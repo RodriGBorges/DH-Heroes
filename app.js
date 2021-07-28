@@ -14,7 +14,7 @@ app.get('/lovelace', (req,res) => {res.sendFile(path.join(__dirname, 'views', 'l
 app.get('/turing', (req,res) => {res.sendFile(path.join(__dirname, 'views', 'turing.html'))})
 app.use(server.static('public'))
 
-app.listen(port, () => console.log('Servidor ejecutandose en puerto', port))
+app.listen(port, () => console.log('Servidor corriendo en http://localhost:' + port + '/home'))
 
 
 
