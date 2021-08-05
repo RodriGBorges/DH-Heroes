@@ -3,6 +3,7 @@ const app = server();
 const port = 3030;
 const path = require('path');
 
+app.use(server.static('public'))
 
 app.get('/home', (req,res) => {res.sendFile(path.join(__dirname, 'views', 'index.html'))})
 app.get('/babbage', (req,res) => {res.sendFile(path.join(__dirname, 'views', 'babbage.html'))})
@@ -12,7 +13,6 @@ app.get('/hamilton', (req,res) => {res.sendFile(path.join(__dirname, 'views', 'h
 app.get('/hopper', (req,res) => {res.sendFile(path.join(__dirname, 'views', 'hopper.html'))})
 app.get('/lovelace', (req,res) => {res.sendFile(path.join(__dirname, 'views', 'lovelace.html'))})
 app.get('/turing', (req,res) => {res.sendFile(path.join(__dirname, 'views', 'turing.html'))})
-app.use(server.static('public'))
 
 app.listen(port, () => console.log('Servidor corriendo en http://localhost:' + port + '/home'))
 
